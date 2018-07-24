@@ -1,0 +1,64 @@
+version: '3'
+services:
+
+  # genesis node
+  node1:
+    image: quorum:latest
+    environment:
+      - NODE=1
+    volumes:
+      - $PWD:/node
+    ports:
+      - 22000:22000
+    networks:
+      - quorumnetwork
+
+  # secondary nodes
+  node2:
+    image: quorum:latest
+    environment:
+      - NODE=2
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    networks:
+      - quorumnetwork
+  node3:
+    image: quorum:latest
+    environment:
+      - NODE=3
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    networks:
+      - quorumnetwork
+  node4:
+    image: quorum:latest
+    environment:
+      - NODE=4
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    networks:
+      - quorumnetwork
+  node5:
+    image: quorum:latest
+    environment:
+      - NODE=5
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    networks:
+      - quorumnetwork
+  node6:
+    image: quorum:latest
+    environment:
+      - NODE=6
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    networks:
+      - quorumnetwork
+
+networks:
+  quorumnetwork:
