@@ -35,6 +35,8 @@ if [ $NODE == "1" ]; then
 else
   sleep 5
   until wait_address_file; do sleep 5; done
+  echo "Compile smart contract"
+  cd /blockchain && truffle compile
   echo "Done"
   cd /api && npm run api -- --node $NODE
 fi
