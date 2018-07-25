@@ -1,0 +1,35 @@
+FROM node:8-alpine as build
+
+WORKDIR /tmp
+
+RUN apk update && apk add --no-cache --virtual .build-deps \
+        python \
+        g++ \
+        make \
+	git
+
+COPY api/package*.json /tmp/api/
+COPY blockchain/package*.json /tmp/blockchain/
+
+RUN cd api && npm install
+RUN cd blockchain && npm install
+RUN apk del .build-deps
+
+FROM node:8-alpine
+
+COPY --from=build /var/cache/apk /var/cache/apk
+RUN apk add --no-cache jq bash openssl curl python git
+
+RUN npm install -g truffle@4.0.5
+
+COPY api /api
+COPY --from=build /tmp/api/node_modules /api/node_modules
+
+COPY blockchain /blockchain
+COPY --from=build /tmp/blockchain/node_modules /blockchain/node_modules
+
+ENV TERM=xterm-256color
+
+WORKDIR /node
+
+ENTRYPOINT [ "./start-api.sh" ]

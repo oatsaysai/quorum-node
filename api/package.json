@@ -1,0 +1,45 @@
+{
+  "name": "quorum_api",
+  "version": "0.0.1",
+  "description": "Rest API for call web3 API",
+  "main": "index.js",
+  "scripts": {
+    "api": "babel-node ./src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-register": "^6.22.0",
+    "dateformat": "^3.0.2",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "ethereum-encryption": "0.0.3",
+    "express": "^4.16.2",
+    "express-rate-limit": "^2.11.0",
+    "modern-syslog": "^1.1.4",
+    "moment-timezone": "^0.5.14",
+    "nanotimer": "^0.3.15",
+    "node-json-rpc": "0.0.1",
+    "random-js": "^1.0.8",
+    "randomstring": "^1.1.5",
+    "redis": "^2.8.0",
+    "request": "^2.83.0",
+    "truffle-contract": "^1.0.5",
+    "web3": "^0.20.1",
+    "yargs": "^6.6.0"
+  },
+  "dependencies": {
+    "syslog-client": "^1.1.1",
+    "syslog-server": "^1.0.1"
+  }
+}

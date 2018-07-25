@@ -1,0 +1,29 @@
+# Node.js libraries
+node_modules/
+.node-*
+package-lock.json
+
+# Geth data
+data/
+data2/
+qdata/
+geth/
+
+# Result data
+benchmark/blockData.json
+benchmark/contractAddress.json
+benchmark/WriteReadResult.json
+nohup.out
+ethereum_script/nohup.out
+quorum_script/nohup.out
+
+build/
+log/
+
+result/
+
+contract_addresses.json
+
+# OSX
+#
+.DS_Store

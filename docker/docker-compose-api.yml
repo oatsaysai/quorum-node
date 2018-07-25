@@ -1,0 +1,78 @@
+version: '3'
+services:
+
+  node-api-1:
+    image: quorum-api:latest
+    environment:
+      - NODE=1
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node1
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8181:8181
+    networks:
+      - quorumnetwork
+  node-api-2:
+    image: quorum-api:latest
+    environment:
+      - NODE=2
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node2
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8182:8181
+    networks:
+      - quorumnetwork
+  node-api-3:
+    image: quorum-api:latest
+    environment:
+      - NODE=3
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node3
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8183:8181
+    networks:
+      - quorumnetwork
+  node-api-4:
+    image: quorum-api:latest
+    environment:
+      - NODE=4
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node4
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8184:8181
+    networks:
+      - quorumnetwork
+  node-api-5:
+    image: quorum-api:latest
+    environment:
+      - NODE=5
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node5
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8185:8181
+    networks:
+      - quorumnetwork
+  node-api-6:
+    image: quorum-api:latest
+    environment:
+      - NODE=6
+      - MIN_NODE=6
+      - SEED_HOSTNAME=node6
+    volumes:
+      - $PWD:/node
+    ports:
+      - 8186:8181
+    networks:
+      - quorumnetwork
+
+networks:
+  quorumnetwork:
