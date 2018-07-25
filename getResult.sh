@@ -2,7 +2,7 @@
 set -u
 set -e
 
-rm -rf result/*
+rm -rf result
 mkdir result
 containers=$(docker ps | grep "quorum-api:latest" | awk '{ print $1 }')
 var=1
