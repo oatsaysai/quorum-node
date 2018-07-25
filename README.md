@@ -19,3 +19,9 @@ docker-compose -f docker/docker-compose-api.yml up
  # Example how to use loadtest
 node loadtest.js -d 10 -m 10 -s 0 -a 127.0.0.1,8181,127.0.0.1,8182,127.0.0.1,8183,127.0.0.1,8184,127.0.0.1,8185,127.0.0.1,8186
  ```
+
+## Get result
+ ```sh
+ ./getResult.sh
+ # Result from all node are stored in result directory
+ ```
