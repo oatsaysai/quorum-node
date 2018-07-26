@@ -27,3 +27,6 @@ contract_addresses.json
 # OSX
 #
 .DS_Store
+
+.vscode
+script.txt
