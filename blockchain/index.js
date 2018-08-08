@@ -11,9 +11,9 @@ var util = require('util');
 
 const path = require('path');
 var log_file_path = path.join(__dirname, '/result.csv');
-// let addresssFilePath = path.join(__dirname, '/contract_addresses.json');
+let addresssFilePath = path.join(__dirname, '/contract_addresses.json');
 // const homedir = require('os').homedir();
-let addresssFilePath = path.join('/node', '/contract_addresses.json');
+// let addresssFilePath = path.join('/node', '/contract_addresses.json');
 
 var stream = fs.createWriteStream(log_file_path, { flags: 'w' });
 // console.log(new Date().toISOString());
